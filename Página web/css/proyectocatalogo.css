@@ -1,0 +1,10 @@
+.Bienvenida{
+    background-image: url(https://i.ibb.co/64G35T1/hazte-premium-descarga-alta-resolucion-designed-with-EDIT-org-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+#carrito table thead {
+    box-shadow: 0px 4px  rgba(0, 0, 0, 0.199);
+}

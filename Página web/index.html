@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/cdbe80c2a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/proyectocatalogo.css" />
+    <link rel="stylesheet" href="css/proyectofinalsyle.css" />
+    <link rel="stylesheet" href="css/proyectofinalpiedepag.css" />
+  </head>
+  <body>
+
+    <header class="w-full bg-gray-600 fixed z-40">
+      <div class="mx-40 flex justify-between">
+        <div class="text-white text-xl p-5">ElectroHuánuco</div>
+
+        <div class="text-white  p-5">
+          <i class="fas fa-shopping-cart text-lg cursor-pointer" id="iconoCarrito"></i>
+    
+          <!-- El carrito de compras -->
+          <div id="carrito" class="bg-white text-black absolute mt-8 right-40 p-4 shadow-lg hidden border-2">
+                                    
+            <table id="lista-carrito" class="">
+                <thead>
+                    <tr class="flex gap-x-24 mb-2 pr-7">
+                        <th class="w-3/12 ">Imagen</th>
+                        <th class="w-3/12 ">Nombre</th>
+                        <th class="w-2/12 ">Precio</th>
+                        <th class="w-2/12 ">Cantidad</th>
+                        <th class="w-2/12 "></th>
+                    </tr>
+                </thead>
+                <tbody class="block max-h-96 overflow-y-scroll overflow-x-hidden"></tbody>
+            </table>
+           
+            <div class="flex gap-x-6 w-full">
+            <a href="#" id="vaciar-carrito" class="bg-red-400 p-2 flex justify-center text-white mt-4 w-6/12 
+            transition duration-500 ease-in-out hover:bg-red-600 transform hover:-translate-y-1 hover:scale-100 ...
+            ">Vaciar Carrito</a>
+
+            <button class=" bg-green-400 text-gray-100 shadow w-6/12 p-2 mt-4
+            transition duration-500 ease-in-out hover:bg-green-500 transform hover:-translate-y-1 hover:scale-100 ...
+            " id="btn-pedir">
+              Pedir
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="Bienvenida bg-gray-300 h-full bg-fixed pt-36">
+      <div class="text-white py-40 px-60 h-screen">
+        <h1 class="text-7xl">TENEMOS LOS MEJORES IMPLEMENTOS DE hogar</h1>
+        <p class="text-3xl">
+            Somos su mejor opción si está buscando electrodomésticos para su cocina.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <h1 class="text-center text-2xl">
+        A continuacion le mostramos nuestro catalogo de Productos
+      </h1>
+      <div class="flex mt-10 mx-40 mb-10">
+        <div class="flex space-x-5 mx-auto" id="categorias">
+          <button
+            class="
+              p-3
+              mx-auto
+              border-2
+              shadow-lg
+              transition
+              duration-500
+              ease-in-out
+              hover:bg-red-600
+              transform
+              hover:-translate-y-1 hover:scale-105
+              btn-categoria
+            "
+            value="Cafetera"
+          >
+            Cafeteras
+          </button>
+          <button
+            class="
+              p-3
+              mx-auto
+              border-2
+              shadow-lg
+              transition
+              duration-500
+              ease-in-out
+              hover:bg-red-600
+              transform
+              hover:-translate-y-1 hover:scale-105
+              btn-categoria
+            "
+            value="Refrigeradora"
+          >
+            Refrigeradores
+          </button>
+          <button
+            class="
+              p-3
+              mx-auto
+              border-2
+              shadow-lg
+              transition
+              duration-500
+              ease-in-out
+              hover:bg-red-600
+              transform
+              hover:-translate-y-1 hover:scale-105
+              btn-categoria
+            "
+            value="Televisor"
+          >
+            Televisores
+          </button>
+          <button
+            class="
+              p-3
+              mx-auto
+              border-2
+              shadow-lg
+              transition
+              duration-500
+              ease-in-out
+              hover:bg-red-600
+              transform
+              hover:-translate-y-1 hover:scale-105
+              btn-categoria
+            "
+            value="Horno"
+          >
+            Hornos Eléctricos
+          </button>
+          <button
+            class="
+              p-3
+              mx-auto
+              border-2
+              shadow-lg
+              transition
+              duration-500
+              ease-in-out
+              hover:bg-red-600
+              transform
+              hover:-translate-y-1 hover:scale-105
+              btn-categoria
+            "
+            value="Arrocera"
+          >
+            Ollas Arroceras
+          </button>
+        </div>
+      </div>
+      <div class="flex pl-28 mb-60 text-sm">
+        <div class=" w-2/12 ">
+          <div class="border-2  space-y-4 pb-6">
+          <h1 class=" w-100 bg-gray-200 pl-4 font-bold py-2">Filtrar por</h1>
+
+          <button class="bg-red-400 p-2 w-10/12 text-white ml-4
+          transition duration-500 ease-in-out  hover:bg-red-600 transform hover:-translate-y-1 hover:scale-100
+          " id="restablecerFiltro">Restablecer filtros <i class="fas fa-sync ml-6"></i></button>
+          <div>
+            <h4 class="mt-4 pl-4 font-bold">Colores</h4>
+
+            <div class="space-y-5 p-4" id="color">
+              <div class="space-x-2">
+                <i class="fas fa-square-full text-red-500"></i
+                ><button class="hover:text-yellow-500 btn-color" value="Rojo">
+                  Rojo
+                </button>
+              </div>
+              <div class="space-x-2">
+                <i class="fas fa-square-full text-black"></i
+                ><button class="hover:text-yellow-500 btn-color" value="Negro">
+                  Negro
+                </button>
+              </div>
+              <div class="space-x-2">
+                <i class="fas fa-square-full text-gray-300"></i
+                ><button class="hover:text-yellow-500 btn-color" value="Plateado">
+                  Plateado
+                </button>
+              </div>
+              <div class="space-x-2">
+                <i class="fas fa-square-full text-gray-400"></i
+                ><button class="hover:text-yellow-500 btn-color" value="Gris">
+                  Gris
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pl-4 caja-rango">
+            <h1 class="font-bold">Precio</h1>
+            <h1>Elegir precio maximo</h1>
+            <div class="flex space-x-5 pr-2">
+              <input
+                type="range"
+                min="0"
+                max="5000"
+                value="5000"
+                id="inputRangoMax"
+                class="w-10/12"
+              /><label for="" id="max" class="items-center my-auto">5000</label>
+            </div>
+            <h1>Elegir precio minimo</h1>
+            <div class="flex space-x-5 pr-2">
+              <input
+                type="range"
+                min="0"
+                max="5000"
+                value="0"
+                id="inputRangoMin"
+                class="w-9/12"
+              /><label for="" id="min" class="items-center my-auto">0</label>
+            </div>
+          </div>
+
+          <div class="ml-4">
+            <h1 class="font-bold">Fabricante</h1>
+            <select name="" id="fabricante" class="w-11/12 py-2 bg-gray-600 text-white">
+              <option value="" class="text-center">
+                --------Seleccionar---------
+              </option>
+            </select>
+          </div>
+
+          </div>
+        </div>
+        
+        <!-- Aqui se muestran la lista de electrodomesticos -->
+
+        <div class="bg-white border-2 w-9/12 ml-8">
+          <div class="m-10 caja">
+            <h2 class="font-bold text-2xl my-4 pb-5" id="textoTituloCategoria">
+              Todas las categorias
+            </h2>
+            <div id="alertaNoResultado"></div>
+            <div
+              class="mt-6 grid grid-cols-4 gap-x-10 gap-y-10"
+              id="caja-electrodomesticos"
+            >
+              <!-- More products... -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ventana modal  -->
+
+    <div class="bg-black bg-opacity-90  inset-0 hidden justify-center items-center z-50 fixed" id="ventana-modal">
+      <div class="bg-gray-200  py-2 px-3 rounded shadow-xl text-gray-900" >
+          <div class="flex justify-between items-center">
+              <h4 class="text-lg font-bold" id="titulo-modal">Realizar Pedido</h4>
+              
+              <i class="far fa-times-circle text-lg hover:text-red-500" id="close-modal"></i>
+          </div>
+          <div class="mt-2 text-sm" id="cajaModal">
+              <!-- Formulario  -->
+     
+               <form action="">
+                  <div class="w-96">
+                    <label for="">Nombres y apellidos completos: <input type="text" class="border-none w-full" id="nombre"></label>
+                    <label for="">Número de DNI: <input type="text" class="border-none w-full" id="nombre"></label>
+                    <label for="">Dirección de su domicilio: <input type="text" class="border-none w-full" id="nombre"></label>
+                    <label for="">Correo electrónico: <input type="text" class="border-none w-full" id="nombre"></label>
+                    <label for="">Número telefónico: <input type="text" class="border-none w-full" id="nombre"></label>
+                  </div>
+
+                </form>
+   
+          </div>
+          <div class="mt-3 flex justify-end space-x-3" id="btnOpcionesModal">
+              <button class="px-3 py-1 rounded hover:bg-red-300 hover:bg-opacity-50 hover:text-red-900" id="btn-cancelar">Cancelar</button>
+              <button class="px-3 py-1 bg-green-400 text-gray-200 hover:bg-green-500 rounded" id="btn-comprar">Comprar</button>
+          </div>
+      </div>
+  </div>
+  <h2 class="main-title">Redes sociales</h2>
+    <footer id="contacto" class="icon-redes">
+        <div class="social-media">
+            <a href="https://www.facebook.com/ElectroHu%C3%A1nuco-108938904863168" class="social-media-icon">
+                <i class="fab fa-facebook"></i>
+            </a>
+
+            <a href="https://www.instagram.com/electrohuanuco/?hl=es-la" class="social-media-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/51941454635?text=Mercato!!%20quiero%20un%pedido" class="social-media-icon">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>   
+    </div>
+    <br>
+  </footer>
+    <footer class="main-footer">
+        <div class="footer__section">
+          <h2 class="footer__title">Tú tienda de confianza</h2>
+          <p class="footer__txt">Tenemos los mejores electrodomésticos para su hogar, y lo mejor de todo a un precio accecible.</p>
+        </div>
+        <div class="footer__section">
+          <h2 class="footer__title">Locación :</h2>
+          <p class="footer__txt"> Jr. Dos de mayo 1361, Huánuco, Huánuco, Huánuco.</p>
+        </div>
+        <div class="footer__section">
+        <h2 class="footer__title">Contáctanos</h2>
+          <p class="footer__txt">Celular : +51 941 454 635</p>
+          <p class="footer__txt">Teléfono : (062) 623352</p>
+          <p class="footer__txt">Email : Electrohuanuco2021@gmail.com</p>
+        </div>
+        <p class="copy">© 2021 Electrohuanuco.</p>
+      </footer>
+  <script src="js/proyecatalogo.js"></script>
+  <script src="js/proyectcatalogo.js"></script>
+  <script src="js/proyectocatalogo.js"></script>
+  <script src="js/proyectofinalrmulario.js"></script>
+
+  </body>
+</html>

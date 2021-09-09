@@ -1,0 +1,54 @@
+@media screen and (min-width:1024px) {
+    .main-footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    .copy {
+        grid-column-start: span 3;
+        text-align: center;
+    }
+}
+.social-media {
+    width: 28%;
+    display: flex;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+.social-media-icon {
+    margin-left: 75px;
+    width: 700px;
+    height: 80px;
+    border: 0px  rgba(1, 1, 17, 0.199);
+    border-radius: 20%;
+    color:  rgba(1, 1, 17, 0.199);
+    text-align: center;
+
+}
+
+
+.social-media-icon:hover {
+    color: rgb(22, 1, 1);
+    text-align: center;
+    
+    background: rgba(1, 1, 17, 0.199);
+}
+
+
+.social-media-icon i {
+    font-size: 80px;
+    line-height: 80px;
+ 
+
+    
+}
+footer {
+    padding-bottom: 0.4px;
+}
+.icon-redes{
+    align-items: center;
+}
+h2{
+    text-align: center;
+}
